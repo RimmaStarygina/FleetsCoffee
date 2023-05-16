@@ -1,0 +1,17 @@
+
+fun main(){
+    println(firstNonRepeated("hello"))
+}
+
+fun firstNonRepeated(s: String): String {
+    val charCount = mutableMapOf<Char, Int>()
+    for (char in s) {
+        charCount[char] = charCount.getOrDefault(char, 0) + 1
+    }
+    for (char in s) {
+        if (charCount[char] == 1) {
+            return char.toString()
+        }
+    }
+    return ""
+}
